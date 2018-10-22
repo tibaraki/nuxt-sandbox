@@ -15,45 +15,52 @@ div.index
 </template>
 
 <script lang='ts'>
-import Vue from 'vue'
-import Component from 'nuxt-class-component'
-import { Prop } from 'vue-property-decorator'
-import { mapState, mapActions } from 'vuex'
+import Vue from "vue";
+import Component from "nuxt-class-component";
+import { Prop } from "vue-property-decorator";
+import { mapState, mapActions } from "vuex";
 
 // import components
-import TestComponent from '~/components/atoms/TestComponent'
+import TestComponent from "~/components/atoms/TestComponent";
 
 @Component({
   components: { TestComponent },
   computed: {
-    ...mapState(['sampleRootState']),
-    ...mapState('test', ['sampleModuleState'])
+    ...mapState(["sampleRootState"]),
+    ...mapState("test", ["sampleModuleState"])
   },
   methods: {
-    ...mapActions('test', ['setCounter'])
+    ...mapActions("test", ["setCounter"])
   }
 })
 export default class Index extends Vue {
   // props
-  @Prop({ default: 'prop_default_value' }) propTest!: string
+  @Prop({ default: "prop_default_value" })
+  propTest!: string;
   // data
-  dataTest  = `initial data with prop(${this.propTest})`
+  dataTest = `initial data with prop(${this.propTest})`;
   // layout
-  layout () { return 'test' }
-  
+  layout() {
+    return "test";
+  }
+
   // lifecycle hook
-  mounted () {
-    console.log([100,200].includes(100)) // polyfill test
-    console.log((() => { return 'transpile test' })())
-    this.methodTest()
+  mounted() {
+    console.log([100, 200].includes(100)); // polyfill test
+    console.log(
+      (() => {
+        return "transpile test";
+      })()
+    );
+    this.methodTest();
   }
   // computed
-  get computedTest () {
-    return `computedTest with data(${this.dataTest})`
+  get computedTest() {
+    return `computedTest with data(${this.dataTest})`;
   }
   // method
-  methodTest () {
-    alert(`methodTest with date(${this.dataTest})`)
+  methodTest() {
+    alert(`methodTest with date(${this.dataTest})`);
   }
 }
 </script>
