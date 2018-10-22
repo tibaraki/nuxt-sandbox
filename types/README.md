@@ -1,1 +1,0 @@
-## typescript型定義配置場所

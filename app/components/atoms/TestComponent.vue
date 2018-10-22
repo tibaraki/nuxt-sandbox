@@ -4,7 +4,9 @@ div.test-component
 </template>
 
 <script lang='ts'>
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import Vue from 'vue'
+import Component from 'nuxt-class-component'
+import { Prop } from 'vue-property-decorator'
 
 @Component
 export default class TestComponent extends Vue {
@@ -14,7 +16,9 @@ export default class TestComponent extends Vue {
 </script>
 
 <style lang='scss' scoped>
+@import '@css/variables';
+
 span {
-  color: gray;
+  color: $sample-gold;
 }
 </style>
