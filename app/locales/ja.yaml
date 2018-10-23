@@ -1,0 +1,3 @@
+test:
+  message: i18nテスト
+  message_with_arg: "{arg}です"

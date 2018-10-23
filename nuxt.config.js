@@ -17,12 +17,17 @@ module.exports = {
       config.resolve.alias['@js']  = path.join(__dirname, 'app/assets/javascripts')
       config.resolve.alias['@css'] = path.join(__dirname, 'app/assets/stylesheets')
       config.resolve.extensions.push('.scss')
+      config.module.rules.push({
+        test: /\.yaml$/,
+        use: ['json-loader', 'yaml-loader']
+      })
     }
   },
   modules: [
     '@nuxtjs/axios'
   ],
   plugins: [
-    '~/plugins/axios.js'
+    '~/plugins/axios.ts',
+    '~/plugins/i18n.ts'
   ]
 }

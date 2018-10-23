@@ -10,9 +10,19 @@ div.index
   p computed: {{computedTest}}
   p store: {{sampleRootState}}
   p store(namespaced): {{sampleModuleState}}
+
   test-component(propTest="prop for child component")
+
   button(@click="setCounter(1000)") do vuex action
   button(@click="apiCallTest") do vuex action(api call)
+
+  p
+    span i18n: 
+    span(v-t="'test.message'")
+  p
+    span i18n with args: 
+    span(v-t="{path: 'test.message_with_arg',args: {arg: 'hoge'}}")
+
 </template>
 
 <script lang='ts'>

@@ -1,9 +1,4 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true
-  },
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: 'typescript-eslint-parser'
@@ -13,11 +8,7 @@ module.exports = {
     'plugin:vue/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: [
-    'vue'
-  ],
   // custom rules
   rules: {
-    //'no-console': 'off'
   }
 }

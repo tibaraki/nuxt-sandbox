@@ -74,3 +74,7 @@ Vuex用。moduleで書く
 ## middleware
 
 ルーティング前のフック処理を書く。認証など
+
+## locales
+
+i18n用

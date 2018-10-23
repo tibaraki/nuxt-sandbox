@@ -1,7 +1,3 @@
-# scs-console
-
-SCSの生産管理向けフロントエンド
-
 - Nuxt.js(SPA)
 - typescript/javascript
 
