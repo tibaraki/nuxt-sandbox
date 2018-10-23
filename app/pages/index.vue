@@ -12,6 +12,7 @@ div.index
   p store(namespaced): {{sampleModuleState}}
   test-component(propTest="prop for child component")
   button(@click="setCounter(1000)") do vuex action
+  button(@click="apiCallTest") do vuex action(api call)
 </template>
 
 <script lang='ts'>
@@ -30,7 +31,7 @@ import TestComponent from "~/components/atoms/TestComponent";
     ...mapState("test", ["sampleModuleState"])
   },
   methods: {
-    ...mapActions("test", ["setCounter"])
+    ...mapActions("test", ["setCounter", "apiCallTest"])
   }
 })
 export default class Index extends Vue {
@@ -42,6 +43,10 @@ export default class Index extends Vue {
   // layout
   layout() {
     return "test";
+  }
+  // title
+  head() {
+    return { title: "testpage" };
   }
 
   // lifecycle hook

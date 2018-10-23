@@ -17,5 +17,15 @@ export const actions = {
       })()
     );
     commit("setCounter", counter);
+  },
+  async apiCallTest({ commit }) {
+    try {
+      const data = await this.$axios.$get(
+        "https://jsonplaceholder.typicode.com/todos/1"
+      );
+      alert(JSON.stringify(data));
+    } catch (error) {
+      console.log(error);
+    }
   }
 };

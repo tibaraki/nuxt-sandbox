@@ -1,9 +1,11 @@
-## components
+# ディレクトリ構成
 
-Vueコンポーネントの粒度ルール
+## Vueコンポ関連
+
+Vueコンポーネントの粒度・配置ルール
 AtomicDesignっぽく
 
-### atoms
+### components/atoms
 
 UI上の最小単位
 
@@ -11,7 +13,7 @@ UI上の最小単位
 - Vuex利用: 不可(ドメインに依存しないように書く)
 - 例: 入力制約を付加したテキストフィールド等
 
-### molecules
+### components/molecules
 
 atomやpureHTMLを組み合わせてドメイン色のないUI機能を表現するもの
 
@@ -19,7 +21,7 @@ atomやpureHTMLを組み合わせてドメイン色のないUI機能を表現す
 - Vuex利用: 不可(ドメインに依存しないように書く)
 - 例: カラーピッカー等
 
-### organisms
+### components/organisms
 
 ドメインに強く依存するデータを扱うまとまった単位
 
@@ -32,9 +34,10 @@ organismからorganismを利用する場合はコンポーネントをグルー�
 >例:
 >
 >organisms/ItemList/ItemList.vue
+>
 >organisms/ItemList/ItemListRow.vue
 
-### pages
+### components/pages
 
 各コンポーネントを組み合わせて表示されるページを構成する
 ドメインに依存せざるを得ないが、業務ロジックは極力organismsに投げて薄く書く
@@ -43,9 +46,31 @@ organismからorganismを利用する場合はコンポーネントをグルー�
 - コンポーネント利用: atom/molecule/organisms可
 - Vuex利用: 可
 
-### layouts
+### components/layouts
 
 複数pageでヘッダーやフッターを共有する場合、layoutを作成し、pageからlayoutを呼ぶ
 
 - コンポーネント利用: atom/molecule/organisms可
 - Vuex利用: 不可
+
+## assets
+
+js(ts)/css/imageなど
+packされる
+
+## static
+
+faviconやrobotsなど
+packされない
+
+## store
+
+Vuex用。moduleで書く
+
+## plugins
+
+一度だけ読まれてほしいものを書く。大きいライブラリの初期化やグローバル設定など
+
+## middleware
+
+ルーティング前のフック処理を書く。認証など

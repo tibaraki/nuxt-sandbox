@@ -9,15 +9,15 @@ module.exports = {
     parser: 'typescript-eslint-parser'
   },
   extends: [
-    'standard',
     'typescript',
     'plugin:vue/recommended',
-    "plugin:prettier/recommended"
+    'plugin:prettier/recommended'
   ],
   plugins: [
     'vue'
   ],
   // custom rules
   rules: {
+    //'no-console': 'off'
   }
 }
